@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentLogin">
+
+    <fragment
+        android:id="@+id/fragmentLogin"
+        android:name="com.example.testdemohyperlink.fragments.FragmentLogin"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_fragmentLogin_to_fragmentCreateAccount"
+            app:destination="@id/fragmentCreateAccount" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCreateAccount"
+        android:name="com.example.testdemohyperlink.fragments.FragmentCreateAccount"
+        android:label="fragment_create_account"
+        tools:layout="@layout/fragment_create_account">
+        <action
+            android:id="@+id/action_fragmentCreateAccount_to_fragmentVerifyOTP"
+            app:destination="@id/fragmentVerifyOTP" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentVerifyOTP"
+        android:name="com.example.testdemohyperlink.fragments.FragmentVerifyOTP"
+        android:label="fragment_verify_o_t_p"
+        tools:layout="@layout/fragment_verify_o_t_p">
+        <action
+            android:id="@+id/action_fragmentVerifyOTP_to_fragmentLogin"
+            app:destination="@id/fragmentLogin"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
